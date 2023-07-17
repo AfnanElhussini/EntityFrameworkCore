@@ -16,5 +16,7 @@ namespace EFCore.Configrations
             builder.Property(b => b.Url)
                 .IsRequired();
         }
+
+
     }
 }

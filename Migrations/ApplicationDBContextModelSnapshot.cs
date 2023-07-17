@@ -79,7 +79,7 @@ namespace EFCore.Migrations
 
                     b.HasIndex("Blogid");
 
-                    b.ToTable("Post");
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("EFCore.Models.Post", b =>

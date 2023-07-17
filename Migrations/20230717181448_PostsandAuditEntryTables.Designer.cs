@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20230717170627_PostsandAuditEntryTables")]
+    [Migration("20230717181448_PostsandAuditEntryTables")]
     partial class PostsandAuditEntryTables
     {
         /// <inheritdoc />
@@ -82,7 +82,7 @@ namespace EFCore.Migrations
 
                     b.HasIndex("Blogid");
 
-                    b.ToTable("Post");
+                    b.ToTable("Posts");
                 });
 
             modelBuilder.Entity("EFCore.Models.Post", b =>

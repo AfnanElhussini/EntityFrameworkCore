@@ -25,7 +25,7 @@ namespace EFCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Post",
+                name: "Posts",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -36,17 +36,17 @@ namespace EFCore.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Post", x => x.Id);
+                    table.PrimaryKey("PK_Posts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Post_Blogs_Blogid",
+                        name: "FK_Posts_Blogs_Blogid",
                         column: x => x.Blogid,
                         principalTable: "Blogs",
                         principalColumn: "id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Post_Blogid",
-                table: "Post",
+                name: "IX_Posts_Blogid",
+                table: "Posts",
                 column: "Blogid");
         }
 
@@ -57,7 +57,7 @@ namespace EFCore.Migrations
                 name: "AuditEntry");
 
             migrationBuilder.DropTable(
-                name: "Post");
+                name: "Posts");
         }
     }
 }

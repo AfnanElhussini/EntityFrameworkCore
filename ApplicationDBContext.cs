@@ -22,6 +22,10 @@ namespace EFCore
             modelBuilder.Entity<AuditEntry>();
             new BlogEntityTypeConfiguration().Configure(modelBuilder.Entity<Blog>());
            
+           // Exclude From Migration 
+           //modelBuilder.Entity<Post>().ToTable("Posts", t => t.ExcludeFromMigrations());
+           //change table name
+           //modelBuilder.Entity<Post>().ToTable("Posts");
         }
 
         public DbSet<Blog>Blogs { get; set; }
