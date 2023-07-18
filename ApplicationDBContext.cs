@@ -26,8 +26,13 @@ namespace EFCore
            //modelBuilder.Entity<Post>().ToTable("Posts", t => t.ExcludeFromMigrations());
            //change table name
            //modelBuilder.Entity<Post>().ToTable("Posts");
+           // Computed Coulmn
+           modelBuilder.Entity<Author>()
+                .Property(a=> a.DisplayName)
+                .HasComputedColumnSql("[FirstName] + ' ' + [LastName]");
         }
 
         public DbSet<Blog>Blogs { get; set; }
+        public DbSet<Author>Authors { get; set; }
     }
 }
