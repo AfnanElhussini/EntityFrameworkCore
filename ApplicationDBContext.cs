@@ -34,5 +34,6 @@ namespace EFCore
 
         public DbSet<Blog>Blogs { get; set; }
         public DbSet<Author>Authors { get; set; }
+        public DbSet<Category> Categories { get; set; }       
     }
 }
