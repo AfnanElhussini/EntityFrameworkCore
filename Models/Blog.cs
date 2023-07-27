@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace EFCore.Models
 {
+    // Indexes can be created on a single column or on multiple columns of a table.
     [Index(nameof(Url))]
    public class Blog
     {
