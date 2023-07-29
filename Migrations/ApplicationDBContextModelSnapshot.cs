@@ -42,7 +42,7 @@ namespace EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AuditEntry");
+                    b.ToTable("AuditEntry", (string)null);
                 });
 
             modelBuilder.Entity("EFCore.Models.Author", b =>
@@ -70,7 +70,7 @@ namespace EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Authors", (string)null);
                 });
 
             modelBuilder.Entity("EFCore.Models.Blog", b =>
@@ -89,7 +89,7 @@ namespace EFCore.Migrations
 
                     b.HasIndex(new[] { "Url" }, "Index_URL");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("EFCore.Models.Category", b =>
@@ -105,7 +105,7 @@ namespace EFCore.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("EFCore.Models.Post", b =>
@@ -129,7 +129,7 @@ namespace EFCore.Migrations
 
                     b.HasIndex("Blogid");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Posts", (string)null);
                 });
 
             modelBuilder.Entity("EFCore.Models.Post", b =>

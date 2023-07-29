@@ -34,6 +34,11 @@ namespace EFCore
             modelBuilder.HasSequence<int>("BlogNumbers", schema: "shared")
                 .StartsAt(1000)
                 .IncrementsBy(5);
+            //Data Seeding 
+            modelBuilder.Entity<Blog>().HasData(
+                new Blog { id = 1, Url = "http://sample.com" }
+                
+                );
         }
 
         public DbSet<Blog>Blogs { get; set; }
