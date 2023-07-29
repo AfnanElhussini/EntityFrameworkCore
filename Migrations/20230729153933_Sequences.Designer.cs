@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCore.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20230729101915_IndexName")]
-    partial class IndexName
+    [Migration("20230729153933_Sequences")]
+    partial class Sequences
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,6 +24,10 @@ namespace EFCore.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.HasSequence<int>("BlogNumbers", "shared")
+                .StartsAt(1000L)
+                .IncrementsBy(5);
 
             modelBuilder.Entity("EFCore.Models.AuditEntry", b =>
                 {

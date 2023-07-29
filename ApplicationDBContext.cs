@@ -30,6 +30,10 @@ namespace EFCore
            modelBuilder.Entity<Author>()
                 .Property(a=> a.DisplayName)
                 .HasComputedColumnSql("[FirstName] + ' ' + [LastName]");
+            //Sequences
+            modelBuilder.HasSequence<int>("BlogNumbers", schema: "shared")
+                .StartsAt(1000)
+                .IncrementsBy(5);
         }
 
         public DbSet<Blog>Blogs { get; set; }

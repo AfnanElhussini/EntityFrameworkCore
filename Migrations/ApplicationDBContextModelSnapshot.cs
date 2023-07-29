@@ -22,6 +22,10 @@ namespace EFCore.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.HasSequence<int>("BlogNumbers", "shared")
+                .StartsAt(1000L)
+                .IncrementsBy(5);
+
             modelBuilder.Entity("EFCore.Models.AuditEntry", b =>
                 {
                     b.Property<int>("Id")
