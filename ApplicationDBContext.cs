@@ -44,8 +44,22 @@ namespace EFCore
                 );
         }
         // Class that represent the table in the database
+        // i tell the context that these classes are Domain classes
+        // DbSet is a collection of entities (Generic)
+
         public DbSet<Blog>Blogs { get; set; }
         public DbSet<Author>Authors { get; set; }
         public DbSet<Category> Categories { get; set; }       
     }
 }
+
+
+/*
+
+ * Migration Rollback 
+ remove-migration  to remove the last migration
+ update-database to apply the migration
+ update-database LastGoodMigration to rollback to the last good migration
+ update-database migration:0 
+
+ */

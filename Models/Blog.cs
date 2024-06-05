@@ -11,10 +11,10 @@ namespace EFCore.Models
 {
     // Indexes can be created on a single column or on multiple columns of a table.
     [Index(nameof(Url), Name = "Index_URL")]
-   public class Blog
+    public class Blog
     {
         public int id { get; set; }
-       
+
         public string Url { get; set; }
 
         public List<Post> Posts { get; set; }
