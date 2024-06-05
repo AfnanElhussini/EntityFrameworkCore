@@ -9,11 +9,14 @@ using EFCore.Configrations;
 
 namespace EFCore
 {
+    // Class that represent the database (Deals with the database)
     public class ApplicationDBContext : DbContext
     {
         // Connection String is degined in OnConfiguring method
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // not recommended to hard code the connection string here 
+            // we can add it in appsettings.json and use it here
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=EFDataBase;Integrated Security=True; TrustServerCertificate=True");
         }
 
@@ -40,7 +43,7 @@ namespace EFCore
                 
                 );
         }
-
+        // Class that represent the table in the database
         public DbSet<Blog>Blogs { get; set; }
         public DbSet<Author>Authors { get; set; }
         public DbSet<Category> Categories { get; set; }       
